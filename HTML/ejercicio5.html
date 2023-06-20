@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Figuras Geométricas</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../CSS/form.css">
+</head>
+<body>
+  <nav class="navbar">
+    <ul class="navbar-menu">
+      <li><a href="../index.html">Formulario</a></li>
+        <li><a href="ejercicio1.html">Palabra</a></li>
+        <li><a href="ejercicio2.html">Grados</a></li>
+        <li><a href="ejercicio3.html">Tipo de triangulo</a></li>
+        <li><a href="ejercicio4.html">Instructores</a></li>
+        <li><a href="ejercicio5.html">Area y perimetro</a></li>
+    </ul>
+</nav>
+  <div class="container">
+    <h1 class="text-center mt-4">Figuras Geométricas</h1>
+    <div class="row mt-4">
+      <div class="col-md-3 mb-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Círculo</h5>
+            <p class="card-text">Selecciona una opción:</p>
+            <button class="btn btn-primary" data-toggle="modal" data-target="#circleModal">Perímetro</button>
+            <button class="btn btn-primary" data-toggle="modal" data-target="#circleModal">Área</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 mb-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Triángulo</h5>
+            <p class="card-text">Selecciona una opción:</p>
+            <button class="btn btn-primary" data-toggle="modal" data-target="#triangleModal">Perímetro</button>
+            <button class="btn btn-primary" data-toggle="modal" data-target="#triangleModal">Área</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 mb-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Rectángulo</h5>
+            <p class="card-text">Selecciona una opción:</p>
+            <button class="btn btn-primary" data-toggle="modal" data-target="#rectangleModal">Perímetro</button>
+            <button class="btn btn-primary" data-toggle="modal" data-target="#rectangleModal">Área</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 mb-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Cuadrado</h5>
+            <p class="card-text">Selecciona una opción:</p>
+            <button class="btn btn-primary" data-toggle="modal" data-target="#squareModal">Perímetro</button>
+            <button class="btn btn-primary" data-toggle="modal" data-target="#squareModal">Área</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Ventana Modal para el Círculo -->
+  <div class="modal fade" id="circleModal" tabindex="-1" role="dialog" aria-labelledby="circleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="circleModalLabel">Círculo - Cálculo</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <label for="circleRadius">Radio:</label>
+            <input type="number" class="form-control" id="circleRadius">
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" onclick="calculateCircle()">Calcular</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Ventana Modal para el Triángulo -->
+  <div class="modal fade" id="triangleModal" tabindex="-1" role="dialog" aria-labelledby="triangleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="triangleModalLabel">Triángulo - Cálculo</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <label for="triangleBase">Base:</label>
+            <input type="number" class="form-control" id="triangleBase">
+          </div>
+          <div class="form-group">
+            <label for="triangleHeight">Altura:</label>
+            <input type="number" class="form-control" id="triangleHeight">
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" onclick="calculateTriangle()">Calcular</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Ventana Modal para el Rectángulo -->
+  <div class="modal fade" id="rectangleModal" tabindex="-1" role="dialog" aria-labelledby="rectangleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="rectangleModalLabel">Rectángulo - Cálculo</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <label for="rectangleWidth">Ancho:</label>
+            <input type="number" class="form-control" id="rectangleWidth">
+          </div>
+          <div class="form-group">
+            <label for="rectangleHeight">Altura:</label>
+            <input type="number" class="form-control" id="rectangleHeight">
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" onclick="calculateRectangle()">Calcular</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Ventana Modal para el Cuadrado -->
+  <div class="modal fade" id="squareModal" tabindex="-1" role="dialog" aria-labelledby="squareModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="squareModalLabel">Cuadrado - Cálculo</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <label for="squareSide">Lado:</label>
+            <input type="number" class="form-control" id="squareSide">
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" onclick="calculateSquare()">Calcular</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="../JS/ejercicios.js"></script>
+</body>
+</html>
